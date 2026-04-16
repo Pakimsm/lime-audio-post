@@ -108,10 +108,6 @@ export default function Home() {
   <AboutPreview />
 </section>
 
-  {/* contact */}
-	  	<section id="contact">
-  <contact />
-</section>
 
       {/* CTA */}
       <section className="py-24 text-center">
