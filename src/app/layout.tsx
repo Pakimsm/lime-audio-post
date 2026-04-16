@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Inter } from 'next/font/google'
+import PageTransition from "@/components/PageTransition";
+import { AnimatePresence } from "framer-motion";
+import TransitionSound from "@/components/TransitionSound";
+import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,7 +34,16 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className={inter.className}>{children}</body>
+   <body>
+  <CustomCursor />
+  <TransitionSound />
+
+  <AnimatePresence mode="wait">
+    <PageTransition>
+      {children}
+    </PageTransition>
+  </AnimatePresence>
+</body>
     </html>
   );
 }
