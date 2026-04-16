@@ -77,7 +77,6 @@ function VideoCard({ work }: { work: Work }) {
           ref={videoRef}
           muted
           playsInline
-          className="w-full aspect-video object-cover"
 		  className="w-full aspect-video object-cover group-hover:scale-105 transition duration-500"
         >
           <source src={work.video} type="video/mp4" />
